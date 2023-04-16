@@ -7,6 +7,10 @@ class EmployeeService {
    saveEmployee(employee) {
       return axios.post(EMPLOYEE_API_BASE_URL, employee);
    }
+
+   getEmployees(){
+      return axios.get(EMPLOYEE_API_BASE_URL);
+   }
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
