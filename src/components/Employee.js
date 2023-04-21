@@ -6,7 +6,7 @@ const Employee = ({ employee, deleteEmployee }) => {
                   <td className='text-left px-6 py-4 whitespace-nowrap'><div className='text-sm text-grey-500'>{employee.firstName}</div>
                   </td>
                    <td className='text-left px-6 py-4 whitespace-nowrap'><div className='text-sm text-grey-500'>{employee.lastName}</div>
-                  </td>
+                   </td>
                    <td className='text-left px-6 py-4 whitespace-nowrap'><div className='text-sm text-grey-500'>{employee.email}</div>
                   </td>                 
                   <td className='text-right px-6 py-4 whitespace-nowrap font-medium text-sm '>
