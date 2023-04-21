@@ -84,7 +84,7 @@ const AddEmployee = () => {
          </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default AddEmployee
