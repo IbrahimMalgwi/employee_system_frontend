@@ -5,7 +5,7 @@ const Employee = ({ employee, deleteEmployee }) => {
   const navigate = useNavigate();
   const editEmployee = (e, id) => {
     e.preventDefault();
-    navigate(`/editEmployee/${id}`);
+    navigate(`/editEmployee /${id}`)
   };
 
   return (
