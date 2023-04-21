@@ -22,7 +22,7 @@ const AddEmployee = () => {
       e.preventDefault();
       EmployeeService.saveEmployee(employee).then((response) =>{
          console.log(response);
-         navigate("/employeeList")
+         navigate("/employeeList"); 
       }).catch((error) => {
          console.log(error)
       });      

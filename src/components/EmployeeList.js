@@ -9,7 +9,6 @@ const EmployeeList = () => {
 
   const [loading, setLoading] = useState(true);
   const [employees, setEmployees] = useState(null);
-
    useEffect(() => {
       const fetchData = async () =>{
          setLoading(true);
@@ -24,6 +23,18 @@ const EmployeeList = () => {
       };
       fetchData();
    }, []);
+
+   const deleteEmployee = (e, id) => {
+      e.preventDefault();
+      EmployeeService.deleteEmployee(id)
+      .then((res) => {
+         if(employees){
+            setEmployees((prevElement) => {
+               return prevElement.filter((employee) => employee.id !== id);
+            });
+         }
+      });
+   };
    
 
   return (
@@ -37,16 +48,16 @@ const EmployeeList = () => {
          <table className='min-w-full'>
             <thead className='bg-grey-50'>
                <tr>
-                  <th className='text-left font-medium text-grey-50 uppercase tracking-wider py-3 px-6'>First Name</th>
-                  <th className='text-left font-medium text-grey-50 uppercase tracking-wider py-3 px-6'>Last Name</th>
-                  <th className='text-left font-medium text-grey-50 uppercase tracking-wider py-3 px-6'>Email</th>
+                  <th className='text-left font-medium text-grey-500 uppercase tracking-wider py-3 px-6'>First Name</th>
+                  <th className='text-left font-medium text-grey-500 uppercase tracking-wider py-3 px-6'>Last Name</th>
+                  <th className='text-left font-medium text-grey-500 uppercase tracking-wider py-3 px-6'>Email</th>
                   <th className='text-right font-medium text-grey-50 uppercase tracking-wider py-3 px-6'>Actions</th>
                </tr>
             </thead>
             {!loading && (            
             <tbody className='bg-white'>
                {employees.map((employee) => (
-                  <Employee employee={employee}  key={employee.id}></Employee>               
+                  <Employee employee={employee} deleteEmployee={deleteEmployee} key={employee.id}></Employee>               
                ))}
             </tbody>
             )}
