@@ -5,10 +5,11 @@ import Employee from './Employee';
 
 const EmployeeList = () => {
 
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [loading, setLoading] = useState(true);
   const [employees, setEmployees] = useState(null);
+  
    useEffect(() => {
       const fetchData = async () =>{
          setLoading(true);
